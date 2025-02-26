@@ -1,0 +1,269 @@
+流程：
+1. 
+GET /visitor/api/iep/weixin/api/ams/wx0b5c194a8eb873fc/isOpen HTTP/1.1
+Host: fk.ghcollege.cn
+Accept: application/json
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 NetType/WIFI MicroMessenger/6.8.0(0x16080000) MacWechat/3.8.2(0x13080215) XWEB/30817 Flue
+Content-Type: application/x-www-form-urlencoded
+Referer: http://fk.ghcollege.cn/visitor/pages/index/indexqj
+Accept-Encoding: gzip, deflate
+Accept-Language: en
+Connection: keep-alive
+
+返回
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 26 Feb 2025 12:30:19 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 45
+Expires: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+X-XSS-Protection: 1; mode=block
+Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+Cache-Control: no-cache
+Proxy-Connection: keep-alive
+
+{"code":200,"data":true,"msg":"操作成功"}
+
+2. 
+GET /visitor/api/iep/weixin/api/auth/wx0b5c194a8eb873fc/login?code=031ufnll2Axw7f4jevnl2QnvKz1ufnld&scope=&state=snsapi_base HTTP/1.1
+Host: fk.ghcollege.cn
+Accept: application/json
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 NetType/WIFI MicroMessenger/6.8.0(0x16080000) MacWechat/3.8.2(0x13080215) XWEB/30817 Flue
+Content-Type: application/x-www-form-urlencoded
+Referer: http://fk.ghcollege.cn/visitor/pages/index/mplogin?redirect=/pages/ask/myask&code=031ufnll2Axw7f4jevnl2QnvKz1ufnld&state=snsapi_base
+Accept-Encoding: gzip, deflate
+Accept-Language: en
+Connection: keep-alive
+
+返回HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 26 Feb 2025 12:30:23 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 394
+Expires: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+X-XSS-Protection: 1; mode=block
+Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+Cache-Control: no-cache
+Proxy-Connection: keep-alive
+
+{"code":200,"data":{"appId":"wx0b5c194a8eb873fc","appType":"2","authUserInfo":true,"companyId":"0","createTime":"2024-04-07 22:45:42","id":"1040784435405389322","openId":"oJfqA6YN-d_lTc_upkD9VcGWFAcE","relationVos":[],"sessionKey":"46cf4d9c-59d1-4e6a-bd04-44426828c247","sex":"2","subscribeTime":"2024-04-07 22:45:39","sysUserCount":"0","updateTime":"2025-02-26 20:30:23"},"msg":"操作成功"}
+
+3.获取今日请假记录
+GET /visitor/api/iep/weixin/api/ams/wx0b5c194a8eb873fc/listRecent?pageSize=10&pageNum=1&orderByColumn=create_time&isAsc=desc&params%5BbeginTime%5D=2025-02-26%2000%3A00%3A00&params%5BendTime%5D=2025-02-26%2023%3A59%3A59 HTTP/1.1
+Host: fk.ghcollege.cn
+Accept: application/json
+third-session: 46cf4d9c-59d1-4e6a-bd04-44426828c247
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 NetType/WIFI MicroMessenger/6.8.0(0x16080000) MacWechat/3.8.2(0x13080215) XWEB/30817 Flue
+Content-Type: application/x-www-form-urlencoded
+Referer: http://fk.ghcollege.cn/visitor/pages/ask/myask
+Accept-Encoding: gzip, deflate
+Accept-Language: en
+Connection: keep-alive
+
+返回
+HTTP/1.1 200 OK
+Server: nginx
+Date: Wed, 26 Feb 2025 12:33:09 GMT
+Content-Type: application/json;charset=UTF-8
+Content-Length: 716
+Expires: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+X-XSS-Protection: 1; mode=block
+Pragma: no-cache
+Vary: Origin
+Vary: Access-Control-Request-Method
+Vary: Access-Control-Request-Headers
+X-Content-Type-Options: nosniff
+Cache-Control: no-cache
+Proxy-Connection: keep-alive
+
+{"code":200,"msg":"查询成功","rows":[{"adjustCode":"1285138164395575379","adjustDes":"空课","adjustId":"1285138164395575379","adjustMode":"","adjustStatus":"2","adjustType":"1","adjustTypeName":"请假","approveTime":"2025-02-26 14:40:58","approveUserId":"13","approveUserName":"王一涵","companyId":"100","corpUserCode":"24028307","deptCode":"898579193516134942","deptName":"G2","endTime":"2025-02-26 16:05:13","phone":"15502165921","startTime":"2025-02-26 14:37:10","subType":"1","subTypeName":"事假","submitTime":"2025-02-26 14:37:18","submitType":"微信","submitUserId":"7557","userCode":"24028307","userName":"杨瀚琪","userUnionId":"oJfqA6YN-d_lTc_upkD9VcGWFAcE","verifyCode":"740216"}],"total":1}
+
+获取全部请假记录：
+GET /visitor/api/iep/weixin/api/ams/wx0b5c194a8eb873fc/listRecent?pageSize=10&pageNum=1&orderByColumn=create_time&isAsc=desc HTTP/1.1
+Host: fk.ghcollege.cn
+Accept: application/json
+third-session: 46cf4d9c-59d1-4e6a-bd04-44426828c247
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36 NetType/WIFI MicroMessenger/6.8.0(0x16080000) MacWechat/3.8.2(0x13080215) XWEB/30817 Flue
+Content-Type: application/x-www-form-urlencoded
+Referer: http://fk.ghcollege.cn/visitor/pages/ask/myask
+Accept-Encoding: gzip, deflate
+Accept-Language: en
+Connection: keep-alive
+
+返回
+{
+	"code": 200,
+	"msg": "查询成功",
+	"rows": [{
+		"adjustCode": "1285138164395575379",
+		"adjustDes": "空课",
+		"adjustId": "1285138164395575379",
+		"adjustMode": "",
+		"adjustStatus": "2",
+		"adjustType": "1",
+		"adjustTypeName": "请假",
+		"approveTime": "2025-02-26 14:40:58",
+		"approveUserId": "13",
+		"approveUserName": "王一涵",
+		"companyId": "100",
+		"corpUserCode": "24028307",
+		"deptCode": "898579193516134942",
+		"deptName": "G2",
+		"endTime": "2025-02-26 16:05:13",
+		"phone": "15502165921",
+		"startTime": "2025-02-26 14:37:10",
+		"subType": "1",
+		"subTypeName": "事假",
+		"submitTime": "2025-02-26 14:37:18",
+		"submitType": "微信",
+		"submitUserId": "7557",
+		"userCode": "24028307",
+		"userName": "杨瀚琪",
+		"userUnionId": "oJfqA6YN-d_lTc_upkD9VcGWFAcE",
+		"verifyCode": "740216"
+	}, {
+		"adjustCode": "1274753904136455693",
+		"adjustDes": "事假",
+		"adjustId": "1274753904136455693",
+		"adjustMode": "",
+		"adjustStatus": "2",
+		"adjustType": "1",
+		"adjustTypeName": "请假",
+		"approveTime": "2025-02-23 20:18:11",
+		"approveUserId": "13",
+		"approveUserName": "王一涵",
+		"companyId": "100",
+		"corpUserCode": "24028307",
+		"deptCode": "898579193516134942",
+		"deptName": "G2",
+		"endTime": "2025-02-24 08:35:03",
+		"phone": "15502165921",
+		"startTime": "2025-02-24 07:50:51",
+		"subType": "1",
+		"subTypeName": "事假",
+		"submitTime": "2025-02-23 20:17:18",
+		"submitType": "微信",
+		"submitUserId": "7557",
+		"userCode": "24028307",
+		"userName": "杨瀚琪",
+		"userUnionId": "oJfqA6YN-d_lTc_upkD9VcGWFAcE",
+		"verifyCode": "580549"
+	}, {
+		"adjustCode": "1274753904136455648",
+		"adjustDes": "事假",
+		"adjustId": "1274753904136455648",
+		"adjustMode": "",
+		"adjustStatus": "1",
+		"adjustType": "1",
+		"adjustTypeName": "请假",
+		"companyId": "100",
+		"corpUserCode": "24028307",
+		"deptCode": "898579193516134942",
+		"deptName": "G2",
+		"endTime": "2025-02-24 20:10:16",
+		"phone": "15502165921",
+		"startTime": "2025-02-24 07:50:59",
+		"subType": "1",
+		"subTypeName": "事假",
+		"submitTime": "2025-02-23 20:12:34",
+		"submitType": "微信",
+		"submitUserId": "7557",
+		"userCode": "24028307",
+		"userName": "杨瀚琪",
+		"userUnionId": "oJfqA6YN-d_lTc_upkD9VcGWFAcE",
+		"verifyCode": "475979"
+	}, {
+		"adjustCode": "1253216807810529582",
+		"adjustDes": "考试结束",
+		"adjustId": "1253216807810529582",
+		"adjustMode": "",
+		"adjustStatus": "2",
+		"adjustType": "1",
+		"adjustTypeName": "请假",
+		"approveTime": "2025-01-14 14:18:10",
+		"approveUserId": "13",
+		"approveUserName": "王一涵",
+		"companyId": "100",
+		"corpUserCode": "24028307",
+		"deptCode": "898579193516134942",
+		"deptName": "G2",
+		"endTime": "2025-01-17 18:01:10",
+		"phone": "15502165921",
+		"startTime": "2025-01-17 10:13:06",
+		"subType": "1",
+		"subTypeName": "事假",
+		"submitTime": "2025-01-14 14:16:12",
+		"submitType": "微信",
+		"submitUserId": "7557",
+		"userCode": "24028307",
+		"userName": "杨瀚琪",
+		"userUnionId": "oJfqA6YN-d_lTc_upkD9VcGWFAcE",
+		"verifyCode": "886241"
+	}, {
+		"adjustCode": "1253216807810529569",
+		"adjustDes": "考试结束",
+		"adjustId": "1253216807810529569",
+		"adjustMode": "",
+		"adjustStatus": "2",
+		"adjustType": "1",
+		"adjustTypeName": "请假",
+		"approveTime": "2025-01-14 14:16:30",
+		"approveUserId": "13",
+		"approveUserName": "王一涵",
+		"companyId": "100",
+		"corpUserCode": "24028307",
+		"deptCode": "898579193516134942",
+		"deptName": "G2",
+		"endTime": "2025-01-15 21:01:10",
+		"phone": "15502165921",
+		"startTime": "2025-01-15 14:13:06",
+		"subType": "1",
+		"subTypeName": "事假",
+		"submitTime": "2025-01-14 14:14:59",
+		"submitType": "微信",
+		"submitUserId": "7557",
+		"userCode": "24028307",
+		"userName": "杨瀚琪",
+		"userUnionId": "oJfqA6YN-d_lTc_upkD9VcGWFAcE",
+		"verifyCode": "152905"
+	}, {
+		"adjustCode": "1203393039693273855",
+		"adjustDes": "病假",
+		"adjustId": "1203393039693273855",
+		"adjustMode": "",
+		"adjustStatus": "2",
+		"adjustType": "1",
+		"adjustTypeName": "请假",
+		"approveTime": "2024-12-17 11:44:45",
+		"approveUserId": "13",
+		"approveUserName": "王一涵",
+		"companyId": "100",
+		"corpUserCode": "24028307",
+		"deptCode": "898579193516134942",
+		"deptName": "G2",
+		"endTime": "2024-12-17 22:22:02",
+		"phone": "15502165921",
+		"startTime": "2024-12-17 07:21:52",
+		"subType": "2",
+		"subTypeName": "病假",
+		"submitTime": "2024-12-16 22:22:35",
+		"submitType": "微信",
+		"submitUserId": "7557",
+		"userCode": "24028307",
+		"userName": "杨瀚琪",
+		"userUnionId": "oJfqA6YN-d_lTc_upkD9VcGWFAcE",
+		"verifyCode": "684264"
+	}],
+	"total": 6
+}
